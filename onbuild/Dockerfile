@@ -24,7 +24,7 @@ RUN set -ex \
         python
 
 RUN wget -qO /tmp/reveal.js.tar.gz $VCS/$GITUSER/$REPO/archive/$VERSION.tar.gz \
-    && echo "$sha1 /tmp/reveal.js.tar.gz" | sha1sum -c -
+    && echo "$sha1 /tmp/reveal.js.tar.gz" | sha1sum -c - \
     && tar -xzf /tmp/reveal.js.tar.gz -C / \
     && rm -f /tmp/reveal.js.tar.gz \
     && mv $REPO-$VERSION reveal.js
