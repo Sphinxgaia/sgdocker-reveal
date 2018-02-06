@@ -8,8 +8,7 @@ ENV NPM_CONFIG_LOGLEVEL warn
 ENV VERSION=3.6 \
   VCS=https://github.com \
   GITUSER=Sphinxgaia \
-  REPO=my_reveal \
-  sha1=d03f677b3e7e584dc38f598f6847c0c8f52f679a
+  REPO=my_reveal 
 
 
 RUN set -ex \
@@ -24,7 +23,6 @@ RUN set -ex \
         python
 
 RUN wget -qO /tmp/reveal.js.tar.gz $VCS/$GITUSER/$REPO/archive/$VERSION.tar.gz \
-    && echo "$sha1 /tmp/reveal.js.tar.gz" | sha1sum -c - \
     && tar -xzf /tmp/reveal.js.tar.gz -C / \
     && rm -f /tmp/reveal.js.tar.gz \
     && mv $REPO-$VERSION reveal.js
