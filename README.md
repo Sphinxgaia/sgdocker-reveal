@@ -10,7 +10,7 @@
   - VCS Link : ENV VCS https://github.com
   - VCS User :  GITUSER Sphinxgaia
   - VCS Repository : REPO my_reveal
-  - tar.gz release sha512num : sha512 cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+  - tar.gz release sha1num : sha1 d03f677b3e7e584dc38f598f6847c0c8f52f679a
 
 ## Default reveal.js configuration :
   - slideNumber
@@ -41,7 +41,7 @@ docker run -d -v $pwd/index.html:/reveal.js/index.html \
   - VCS Link : ENV VCS https://github.com
   - VCS User :  GITUSER Sphinxgaia
   - VCS Repository : REPO my_reveal
-  - tar.gz release sha512num : sha512 cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+  - tar.gz release sha1num : sha1 d03f677b3e7e584dc38f598f6847c0c8f52f679a
 
 ## Default reveal.js configuration :
   - slideNumber

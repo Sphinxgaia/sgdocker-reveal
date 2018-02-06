@@ -12,7 +12,7 @@
   - VCS Link : ENV VCS https://github.com
   - VCS User :  GITUSER Sphinxgaia
   - VCS Repository : REPO my_reveal
-  - tar.gz release sha512num : sha512 262eb03cc755d03449f827ff66b382bd21f83a25742b69a3b55455985853338c87a663e4b225ab402fee3ea61968d0fa8759b6536182c79782c9d5a2e98f83a9
+  - tar.gz release sha1num : sha1 d03f677b3e7e584dc38f598f6847c0c8f52f679a
 
 ## Default reveal.js configuration :
   - slideNumber

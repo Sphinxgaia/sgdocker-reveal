@@ -9,7 +9,7 @@ ENV VERSION=3.6 \
   VCS=https://github.com \
   GITUSER=Sphinxgaia \
   REPO=my_reveal \
-  sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+  sha1=d03f677b3e7e584dc38f598f6847c0c8f52f679a
 
 
 RUN set -ex \
@@ -23,11 +23,11 @@ RUN set -ex \
         make \
         python
 
-RUN wget -qO /tmp/reveal.js.tar.gz $VCS/$GITUSER/$REPO/archive/$VERSION.tar.gz
-RUN echo "$sha512 /tmp/reveal.js.tar.gz" | sha512sum -c -
-RUN  tar -xzf /tmp/reveal.js.tar.gz -C / \
-    && rm -f /tmp/reveal.js.tar.gz
-RUN  mv $REPO-$VERSION reveal.js
+RUN wget -qO /tmp/reveal.js.tar.gz $VCS/$GITUSER/$REPO/archive/$VERSION.tar.gz \
+    && echo "$sha1 /tmp/reveal.js.tar.gz" | sha1sum -c -
+    && tar -xzf /tmp/reveal.js.tar.gz -C / \
+    && rm -f /tmp/reveal.js.tar.gz \
+    && mv $REPO-$VERSION reveal.js
 
 RUN mkdir -p /reveal.js/node_modules \
     && npm install -g grunt-cli \

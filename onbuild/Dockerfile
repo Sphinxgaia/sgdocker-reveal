@@ -5,11 +5,11 @@ FROM node:6.12.3-alpine
 ENV NPM_CONFIG_LOGLEVEL warn
 
 # Set environment variables for reveal.js GitHub repo
-ENV VERSION 3.6
-ENV VCS https://github.com
-ENV GITUSER Sphinxgaia
-ENV REPO my_reveal
-ENV sha512 cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+ENV VERSION=3.6 \
+  VCS=https://github.com \
+  GITUSER=Sphinxgaia \
+  REPO=my_reveal \
+  sha1=d03f677b3e7e584dc38f598f6847c0c8f52f679a
 
 
 RUN set -ex \
@@ -24,7 +24,7 @@ RUN set -ex \
         python
 
 RUN wget -qO /tmp/reveal.js.tar.gz $VCS/$GITUSER/$REPO/archive/$VERSION.tar.gz \
-    && echo "$sha512  /tmp/reveal.js.tar.gz" | sha512sum -c - \
+    && echo "$sha1 /tmp/reveal.js.tar.gz" | sha1sum -c -
     && tar -xzf /tmp/reveal.js.tar.gz -C / \
     && rm -f /tmp/reveal.js.tar.gz \
     && mv $REPO-$VERSION reveal.js
