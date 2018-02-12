@@ -8,8 +8,7 @@ ENV NPM_CONFIG_LOGLEVEL warn
 ENV VERSION=3.6 \
   VCS=https://github.com \
   GITUSER=Sphinxgaia \
-  REPO=my_reveal 
-
+  REPO=my_reveal
 
 RUN set -ex \
     && apk add --no-cache tini \
@@ -38,8 +37,11 @@ RUN mkdir -p /reveal.js/node_modules \
 
 WORKDIR /reveal.js
 
-ONBUILD COPY ./index.html ./index.html
-ONBUILD COPY ./Slides/ ./Slides/
+ONBUILD ENV index=./reveal.js/index.html \
+  slides=./reveal.js/Slides
+
+ONBUILD COPY $index ./index.html
+ONBUILD COPY $slides ./Slides/
 
 USER node
 

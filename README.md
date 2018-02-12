@@ -57,6 +57,6 @@ docker run -d -v $pwd/index.html:/reveal.js/index.html \
 ~~~bash
 mkdir my_folder && cd my_folder
 touch Dockerfile
-echo "FROM Sphinxgaia:3.6-onbuild" > Dockerfile
+echo "FROM sphinxgaia/sgdocker-reveal:3.6-onbuild" > Dockerfile
 docker build -t my_image_name .
 ~~~
