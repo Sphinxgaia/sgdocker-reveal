@@ -38,10 +38,12 @@ RUN mkdir -p /reveal.js/node_modules \
 WORKDIR /reveal.js
 
 ONBUILD ENV index="reveal.js/index.html" \
-  slides="reveal.js/Slides"
+  slides="reveal.js/Slides" \
+  plugins="reveal.js/plugin"
 
 ONBUILD COPY $index ./index.html
 ONBUILD COPY $slides ./Slides/
+ONBUILD COPY $plugins ./plugin/
 
 USER node
 
